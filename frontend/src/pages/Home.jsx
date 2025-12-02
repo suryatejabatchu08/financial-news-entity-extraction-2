@@ -23,7 +23,7 @@ function Home() {
         setError(null)
 
         try {
-            const response = await axios.post('/api/predict', { text })
+            const response = await axios.post('https://suryateja008-financial-news-entity-extraction.hf.space/predict', { text })
             setEntities(response.data.entities)
         } catch (err) {
             setError(err.response?.data?.detail || 'Failed to extract entities. Make sure the backend is running.')
